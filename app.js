@@ -1,8 +1,17 @@
 "use strict";
+/** TOFIX: 
+ * - store api_key and base url as global constant
+ * - separation of concerns: pull .get into getGiphy function
+ * 
+ * */
 
 //Getting the form and adding event handler
+const $gallery = $('#gallery');
 const $giphyForm = $('form');
 $giphyForm.on("submit", handleSubmit);
+
+//Add event listener to Remove Button
+$('#remove-btn').on('click', removeAllGiphys);
 
 /** API call to Giphy, pass 1st url  option to createGiphy func */
 async function handleSubmit(evt) {
@@ -22,10 +31,14 @@ async function handleSubmit(evt) {
 
 /** Append gif to gallery using url from api query */
 function createGiphy(giphyUrl) {
-  const $gallery = $('#gallery');
   const $newGif = $("<div>");
   const $gif = $("<img>");
   $gif.attr("src", giphyUrl);
   $newGif.append($gif);
   $gallery.append($newGif);
+}
+
+/** Empty the gallery element */
+function removeAllGiphys(){
+    $gallery.empty();
 }

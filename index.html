@@ -4,21 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Giphy Party!</title>
+
+  <style>
+    container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      margin: 5px;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <form id="giphy-form">
-    <input name="search-term" type="text">
-    <button id="search-btn" type="submit">Search Giphy!</button>
-  </form>
-  <div id="gallery">
-  </div>
+  <h1> GiphyParty! </h1>
+  <container>
+    <form id="giphy-form">
+      <input name="search-term" type="text">
+      <button id="search-btn" type="submit">Search Giphy!</button>
+    </form>
 
+    <button id="remove-btn">Remove All The Giphys!!</button>
 
-<script src="https://unpkg.com/jquery"></script>
-<script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="app.js"></script>
+    <div id="gallery">
+    </div>
+  </container>
+
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
